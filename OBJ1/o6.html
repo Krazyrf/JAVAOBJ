@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <button>创建表格</button>
+    <script>
+        //点击button，在页面上创建一个三行四列的表格。
+        document.querySelector('button').onclick = function () {
+        //取得页面上的button，并为button添加点击事件
+        //querySelector（‘button’）取得button 
+        //onclick 点击事件
+            var tab = document.createElement('table');
+            //创建节点 节点标签为tables
+            //createElement 创建节点
+            tab.border = 1;//table标签的border属性为1
+            tab.style.width = '500px'//table标签的内联样式 width为500px
+            tab.style.height = '500px'
+            document.body.appendChild(tab)//上树
+            //将table标签追加到父节点body的下面
+            //appendChild 父节点.appendChild（DOM节点）
+            for (var i = 0; i < 3; i++) {//for循环3行
+                var tr = document.createElement('tr')
+                //创建节点  节点标签为：tr
+                tab.appendChild(tr);//上树
+                //将tr标签追加到父节点table标签的下面
+                
+                for (var j = 0; j < 4; j++) {//for循环4列
+                    var td = document.createElement('td');
+                    //创建节点 节点标签为 td
+                    td.innerHTML = '1'
+                    //innerHTML 在td标签里添加内容为1 
+                    td.style.textAlign = 'center';
+                    // style 内联样式
+                    //text-align 写成 textAlign
+                    tr.appendChild(td)
+                    //将td追加到父节点tr的下面
+                }
+            }
+        }
+    </script>
+</body>
+</html>

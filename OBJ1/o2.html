@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .red {
+            background: red;
+        }
+
+        .green {
+            background: green;
+        }
+    </style>
+</head>
+
+<body>
+    <button>点击按钮变色</button>
+    <ul>
+        <li>li+1</li>
+        <li>li+2</li>
+        <li>li+3</li>
+        <li>li+4</li>
+        <li>li+5</li>
+    </ul>
+    <script>
+        //点击按钮，将奇数列的li背景色设置为红色，偶数列li背景色设置为绿色
+        document.querySelector('button').onclick = function () {//找到页面上的button 添加点击事件
+            
+            var li = document.querySelectorAll('li');//用querySelectorAll得到所有的li
+            for (var i = 0; i < li.length; i++) {//因为用querySelectorAll得到的是一个伪数组 所以需要for循环遍历
+                if (i % 2 === 0) {//判断如果取余2等于0的话，就说明他是偶数
+                    li[i].setAttribute('class', 'green')//用setAttribute属性设置class为green
+                }
+                else {
+                    li[i].setAttribute('class', 'red')//用setAttribute属性设置class为red
+                }
+            }
+    
+        }
+    </script>
+</body>
+
+</html>
